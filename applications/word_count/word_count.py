@@ -3,11 +3,10 @@ import re
 def word_count(s):
     # Your code here
     counts = {}
-    bad_chars = [';', ':', '!', "*", '"', '.', ','] 
-    for i in bad_chars : 
-        stripedString = s.replace(i, '') 
+    
+    ignoreList = str.maketrans('', '', '":;,.-+=/\\|[]{}()*^&')
 
-    words = stripedString.split()
+    words = s.translate(ignoreList).lower().split()
     
     for word in words : 
         if word in counts: 
@@ -15,8 +14,8 @@ def word_count(s):
         else:
             counts[word] = 1
     
-    items = list(counts.items())
-    return(items)
+    
+    return(counts)
 
 
 if __name__ == "__main__":
