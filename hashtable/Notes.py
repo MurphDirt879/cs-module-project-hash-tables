@@ -5,10 +5,9 @@ class HashTableEntry:
     def __init__(self, key, value):
         self.key = key
         self.value = value
-​
     def __repr__(self):
         return f'HashTableEntry({repr(self.key)},{repr(self.value)})'
-​
+
 data = [None] * 8
 ​
 def my_hashing_function(s):

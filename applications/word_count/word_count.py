@@ -1,6 +1,22 @@
+import re
+
 def word_count(s):
     # Your code here
+    counts = {}
+    bad_chars = [';', ':', '!', "*", '"', '.', ','] 
+    for i in bad_chars : 
+        stripedString = s.replace(i, '') 
 
+    words = stripedString.split()
+    
+    for word in words : 
+        if word in counts: 
+            counts[word] += 1
+        else:
+            counts[word] = 1
+    
+    items = list(counts.items())
+    return(items)
 
 
 if __name__ == "__main__":
