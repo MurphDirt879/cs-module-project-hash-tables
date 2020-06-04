@@ -1,18 +1,20 @@
+
 def no_dups(s):
     # Your code here
+   
+   
     w = s.split()
-
     singles = []
     duplicates = {}
 
     for x in w:
         if x not in duplicates:
             singles.append(x)
-            duplicates[x] = True
-
-    return " ".join(singles)
+            duplicates[x] = 1
     
-
+    return " ".join(singles)
+   
+    
 
 
 
