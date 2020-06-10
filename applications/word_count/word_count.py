@@ -1,6 +1,21 @@
+import re
+
 def word_count(s):
     # Your code here
+    counts = {}
+    
+    ignoreList = str.maketrans('', '', '":;,.-+=/\\|[]{}()*^&')
 
+    words = s.translate(ignoreList).lower().split()
+    
+    for word in words : 
+        if word in counts: 
+            counts[word] += 1
+        else:
+            counts[word] = 1
+    
+    
+    return(counts)
 
 
 if __name__ == "__main__":
